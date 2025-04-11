@@ -37,7 +37,7 @@
             <material name="white"/>
         </visual>
         <collision>
-        <origin xyz="0.275 0 0.05" />
+        <origin xyz="0 0 0" />
             <geometry>
                 <box size="0.215 0.205 0.06"/>
             </geometry>
