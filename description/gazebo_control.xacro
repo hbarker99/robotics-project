@@ -3,16 +3,6 @@
      <gazebo>
         <plugin name="gz::sim::systems::DiffDrive" filename="gz-sim-diff-drive-system">
 
-        <ros>
-            <namespace>/</namespace>
-            <argument>--ros-args --remap cmd_vel:=cmd_vel</argument>
-            <argument>--ros-diff drive controllros2 jazzy diff drive tuWe've beenargs --remap odom:=odom</argument>
-            <update_rate>10.0</update_rate>
-        </ros>
-        <publish_odom>true</publish_odom>
-        <publish_odom_tf>true</publish_odom_tf>
-        <publish_wheel_transform>true</publish_wheel_transform>
-        
         <!-- WHeel info-->
         <left_joint>left-front-wheel-chassis_joint</left_joint>
         <left_joint>left-back-wheel-chassis_joint</left_joint>
@@ -22,24 +12,31 @@
         <right_joint>right-back-wheel-chassis_joint</right_joint>
 
         <wheel_seperation>0.027</wheel_seperation>
-        <wheel_diameter>0.06</wheel_diameter>
+        <wheel_radius>0.03</wheel_radius>
 
-        <max_wheel_torque>200</max_wheel_torque>
         <max_wheel_acceleration>10.0</max_wheel_acceleration>
 
+        <!-- Input -->
+        <topic>cmd_vel</topic>
+
+        <!-- Output -->
+
+        <frame_id>odom</frame_id>
         <child_frame_id>base_link</child_frame_id>
-
-        <odometry_frame>odom</odometry_frame>
-        <robot_base_frame>base_link</robot_base_frame>
-
+        <odom_topic>odom</odom_topic>
+        <odom_publisher_frequency>30</odom_publisher_frequency>
+        
+        <tf_topic>/tf</tf_topic>
 
         </plugin>
 
-        <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+
+        <plugin filename="gz-sim-joint-state-publisher-system"
+            name="gz::sim::systems::JointStatePublisher">
             <topic>joint_states</topic>
             <joint_name>left-front-wheel-chassis_joint</joint_name>
-            <joint_name>right-front-wheel-chassis_joint</joint_name>
             <joint_name>left-back-wheel-chassis_joint</joint_name>
+            <joint_name>right-front-wheel-chassis_joint</joint_name>
             <joint_name>right-back-wheel-chassis_joint</joint_name>
         </plugin>
     </gazebo>   
