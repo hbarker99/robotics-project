@@ -1,0 +1,9 @@
+<library path="vex_control">
+  <class name="vex_control/VexHardware"
+         type="vex_control::VexHardware"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      ROS2 diff drive controller for vex exp. Following 'Articulated Robotics' tutorial.
+    </description>
+  </class>
+</library>
