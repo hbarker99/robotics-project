@@ -40,6 +40,11 @@ def generate_launch_description():
             default_value='true',
             description='Use the ros 2 controller, otherwise the gazebo one'
         ),
+        DeclareLaunchArgument(
+            'sim_time',
+            default_value='false',
+            description='Run in simulation mode, otherwise real.'
+        ),
 
         node_robot_state_publisher
     ])

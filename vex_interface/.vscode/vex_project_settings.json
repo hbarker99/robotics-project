@@ -4,12 +4,12 @@
 		"json": 2
 	},
 	"project": {
-		"name": "TestProject",
-		"description": "",
-		"creationDate": "4/1/2025, 8:29:35 PM",
+		"name": "vex_interface",
+		"description": "Interface between the motors and raspberry pi",
+		"creationDate": "4/14/2025, 10:25:55 PM",
 		"platform": "EXP",
 		"language": "python",
-		"slot": 3,
+		"slot": 1,
 		"sdkVersion": "EXP_1_0_0_21",
 		"python": {
 			"main": "src/main.py"

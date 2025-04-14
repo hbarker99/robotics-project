@@ -57,7 +57,7 @@ VexComms() = default;
   std::string send_msg(const std::string &msg_to_send, bool print_output = false)
   {
     serial_conn_.FlushIOBuffers(); // Just in case
-    serial_conn_.Write(msg_to_send);
+    serial_conn_.Write("m 123 123");
 
     std::string response = "";
     try
