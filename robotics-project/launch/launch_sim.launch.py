@@ -42,7 +42,7 @@ def generate_launch_description():
     rsp = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory(package_name),'launch','rsp.launch.py'
-                )]), launch_arguments={'use_sim_time': 'true'}.items()
+                )]), launch_arguments={'use_sim_time': 'true', 'use_ros2_control': 'true'}.items()
     )
 
     # Include the Gazebo launch file, proHiyavided by the gazebo_ros package
@@ -55,7 +55,7 @@ def generate_launch_description():
     # Run the spawner node from the gazebo_ros package. The entity name doesn't really matter if you only have a single robot.
     spawn_entity = Node(package='ros_gz_sim', executable='create',
                         arguments=['-topic', 'robot_description',
-                                   '-name', 'my_bot',
+                                   '-name', 'robot',
                                    '-z', '0.1'],
                         output='screen')
     
@@ -70,6 +70,17 @@ def generate_launch_description():
         ]
     )
 
+    diff_drive_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["diff_cont"]
+    )
+    joint_state_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["joint_broad"]
+    )
+
 
 
 
@@ -80,4 +91,6 @@ def generate_launch_description():
         gazebo,
         spawn_entity,
         ros_gz_bridge,
+        diff_drive_spawner,
+        joint_state_spawner,
     ])
