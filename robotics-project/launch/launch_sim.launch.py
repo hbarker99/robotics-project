@@ -56,7 +56,8 @@ def generate_launch_description():
     spawn_entity = Node(package='ros_gz_sim', executable='create',
                         arguments=['-topic', 'robot_description',
                                    '-name', 'robot',
-                                   '-z', '0.1'],
+                                   '-z', '0.1',
+                                   '--replace'],
                         output='screen')
     
     bridge_params = os.path.join(get_package_share_directory(package_name),'config','gz_bridge.yaml')
