@@ -23,7 +23,7 @@ def generate_launch_description():
     # !!! MAKE SURE YOU SET THE PACKAGE NAME CORRECTLY !!!
 
 
-    package_name='robotics-project' #<--- CHANGE ME
+    package_name='robotics-project' 
 
     default_world = os.path.join(
         get_package_share_directory(package_name),
@@ -44,6 +44,14 @@ def generate_launch_description():
                     get_package_share_directory(package_name),'launch','rsp.launch.py'
                 )]), launch_arguments={'use_sim_time': 'true', 'use_ros2_control': 'true'}.items()
     )
+
+    twist_mux_params = os.path.join(get_package_share_directory(package_name),'config','twist_mux.yaml')
+    twist_mux = Node(
+            package="twist_mux",
+            executable="twist_mux",
+            parameters=[twist_mux_params, {'use_sim_time': True}],
+            remappings=[('/cmd_vel_out','/diff_cont/cmd_vel')]
+        )
 
     # Include the Gazebo launch file, proHiyavided by the gazebo_ros package
     gazebo = IncludeLaunchDescription(
@@ -88,7 +96,8 @@ def generate_launch_description():
         world_arg,
         gazebo,
         spawn_entity,
+        twist_mux,
         ros_gz_bridge,
         diff_drive_spawner,
-        joint_state_spawner,
+        joint_state_spawner
     ])
