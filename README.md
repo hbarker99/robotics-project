@@ -1,4 +1,4 @@
-## Robot Package Template
+## Mapping and Navigating Robot
 
 Using Ubuntu Server 24.04.01 on the raspberry pi 5  
 Using Ubuntu Server 24.04.02 on the other machine  
