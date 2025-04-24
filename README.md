@@ -1,6 +1,6 @@
 ## Mapping and Navigating Robot
 
-Using Ubuntu Server 24.04.01 on the raspberry pi 5  
+Using Ubuntu Server 24.04.02 on the raspberry pi 5  
 Using Ubuntu Server 24.04.02 on the other machine  
 
 ## Setup
@@ -9,6 +9,7 @@ Install ROS and Dependencies
 Pi Dependencies:  
     ros-jazzy-control  
     ros-jazzy-ros2-controllers  
+    ros-jazzy-rplidar-ros  
     
 Other Machine Dependencies  
     ros-jazzy-teleop-twist-keyboard  
