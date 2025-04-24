@@ -1,7 +1,7 @@
 ## Mapping and Navigating Robot
 
 Using Ubuntu Server 24.04.02 on the raspberry pi 5  
-Using Ubuntu Server 24.04.02 on the other machine  
+Using Ubuntu Desktop 24.04.02 on the other machine  
 
 ## Setup
 Install ROS and Dependencies  
