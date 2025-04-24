@@ -99,15 +99,15 @@ controller_server:
       time_steps: 56
       model_dt: 0.05
       batch_size: 2000
-      ax_max: 30.0
-      ax_min: -30.0
-      ay_max: 10.0
-      az_max: 10.5
+      ax_max: 5.0
+      ax_min: -5.0
+      ay_max: 5.0
+      az_max: 5.5
       vx_std: 1.2
       vy_std: 1.2
       wz_std: 1.4
-      vx_max: 10.5
-      vx_min: -10.0
+      vx_max: 5.5
+      vx_min: -5.0
       vy_max: 1.5
       wz_max: 5.9
       iteration_count: 1
