@@ -10,11 +10,14 @@ Pi Dependencies:
     ros-jazzy-control  
     ros-jazzy-ros2-controllers  
     ros-jazzy-rplidar-ros  
+    ros-jazzy-twist-mux  
+    libserial-dev  
     
 Other Machine Dependencies  
     ros-jazzy-teleop-twist-keyboard  
     ros-jazzy-control  
     ros-jazzy-ros2-controllers  
+    ros-jazzy-twist-mux  
 
 Install vex_interface into the Vex Controller.  
 
