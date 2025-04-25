@@ -53,4 +53,4 @@ PC: ros2 launch robotics-project navigation.launch.py
   
   
 ### Thanks to  
-[Josh Newman - Articulated Robotics](https://www.youtube.com/@ArticulatedRobotics) - Building a mobile robot series.  
+[Josh Newans - Articulated Robotics](https://www.youtube.com/@ArticulatedRobotics) - Building a mobile robot series.  
